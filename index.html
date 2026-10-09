@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aberdare Roastery</title>
+<meta name="description" content="Single-lot Kenyan coffee, roasted to order in Nairobi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <span class="mark" aria-hidden="true"></span>
+    <a class="brand" href="#lots"><b>Aberdare Roastery</b> <span>Nairobi</span></a>
+    <button class="btn cart-btn ui" id="openCart" aria-haspopup="dialog">
+      Cart <span class="count" id="count" data-empty="1">0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Single-lot Kenyan coffee</p>
+        <h1>Roasted Tuesday. On your shelf Thursday.</h1>
+        <p class="lede">
+          Six lots from this season's washing stations in Nyeri, Kirinyaga and Kiambu.
+          We buy by the lot, roast to order, and print the <em>roast date</em> on every bag —
+          because with coffee this fresh it is the only number that matters.
+        </p>
+      </div>
+      <dl class="batch">
+        <dt>Current batch</dt>
+        <dd class="mono">Tue 06 Oct 2026</dd>
+        <dt>Lots available</dt>
+        <dd class="mono">6 of 9</dd>
+        <dt>Delivery</dt>
+        <dd class="mono">KSh 350 · free over 5,000</dd>
+      </dl>
+    </div>
+  </section>
+
+  <div class="wrap" id="lots">
+    <div class="controls">
+      <div class="ctl">
+        <span>Screen grade</span>
+        <div class="seg" id="gradeSeg" role="group" aria-label="Filter by screen grade"></div>
+      </div>
+      <div class="ctl">
+        <span>Bag size</span>
+        <div class="seg" id="sizeSeg" role="group" aria-label="Choose bag size"></div>
+      </div>
+      <p class="tally" id="tally"></p>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>
+      <strong style="font-family:var(--display);font-size:13px;color:var(--ink)">Aberdare Roastery</strong><br>
+      Baricho Road, Industrial Area, Nairobi<br>
+      Roasting Tuesdays · dispatch Wednesdays
+    </p>
+    <p>
+      Grades follow the Kenyan screen-size system:<br>
+      AA (scr 17–18) · AB (scr 15–16) · PB (peaberry)<br>
+      Altitudes given in metres above sea level.
+    </p>
+    <p style="margin-left:auto">A demo storefront. No payment is taken.</p>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" aria-hidden="true"></div>
+
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-label="Your order" aria-hidden="true">
+  <div class="panel-top">
+    <h2 id="panelTitle">Your order</h2>
+    <button class="x" id="closeCart" aria-label="Close order panel">&times;</button>
+  </div>
+  <div class="panel-scroll" id="panelBody"></div>
+  <div class="panel-foot" id="panelFoot"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Loaded in dependency order: data, then pure cart logic, then the UI. -->
+<script src="assets/js/products.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
